@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اسلامی معلوماتی ویب ایپ</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Nastaliq Urdu', serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- ہیرو سیکشن -->
+  <header class="bg-green-700 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">"خَیْرُکُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ"</h1>
+    <p class="mt-2">اسلامی علم کے حصول کی طرف ایک قدم</p>
+  </header>
+
+  <!-- نیویگیشن مینو -->
+  <nav class="bg-green-100 shadow p-4 flex flex-wrap justify-center gap-4">
+    <button class="bg-green-600 text-white px-4 py-2 rounded">عقائد</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded">عبادات</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded">اخلاقیات</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded">فتویٰ</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded">کتب خانہ</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded">ویڈیوز</button>
+    <button class="bg-green-600 text-white px-4 py-2 rounded">اوقات نماز</button>
+  </nav>
+
+  <!-- فتویٰ فارم -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold mb-4">سوال پوچھیں (فتویٰ)</h2>
+    <form class="bg-white p-4 rounded shadow space-y-4">
+      <input type="text" placeholder="نام" class="w-full p-2 border rounded">
+      <input type="email" placeholder="ای میل" class="w-full p-2 border rounded">
+      <textarea rows="4" placeholder="اپنا سوال یہاں لکھیں..." class="w-full p-2 border rounded"></textarea>
+      <button type="submit" class="bg-green-700 text-white px-6 py-2 rounded">ارسال کریں</button>
+    </form>
+  </section>
+
+  <!-- کتب خانہ -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold mb-4">اسلامی کتب خانہ</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-white p-4 shadow rounded text-center">
+        <p class="mb-2">توحید کی حقیقت</p>
+        <a href="#" class="text-green-700 underline">PDF ڈاؤن لوڈ کریں</a>
+      </div>
+      <div class="bg-white p-4 shadow rounded text-center">
+        <p class="mb-2">فقہی مسائل</p>
+        <a href="#" class="text-green-700 underline">PDF ڈاؤن لوڈ کریں</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ویڈیوز -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold mb-4">ویڈیوز اور دروس</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <iframe class="w-full h-64" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+      <iframe class="w-full h-64" src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- اوقات نماز -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold mb-4">آج کے اوقات نماز</h2>
+    <ul class="bg-white p-4 rounded shadow space-y-2">
+      <li>فجر: 4:10 AM</li>
+      <li>ظہر: 12:30 PM</li>
+      <li>عصر: 4:00 PM</li>
+      <li>مغرب: 7:10 PM</li>
+      <li>عشاء: 8:30 PM</li>
+    </ul>
+  </section>
+
+  <!-- فوٹر -->
+  <footer class="bg-green-700 text-white text-center p-4 mt-6">
+    <p>© 2025 اسلامی ویب ایپ۔ تمام حقوق محفوظ ہیں۔</p>
+    <p>رابطہ: contact@urduai.org | <a href="#" class="underline">ڈونیشن کریں</a></p>
+  </footer>
+</body>
+</html>
