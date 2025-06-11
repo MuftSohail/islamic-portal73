@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Knowledge & Fatwa Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff');
+        .font-urdu { font-family: 'Jameel Noori Nastaleeq', sans-serif; }
+        .font-arabic { font-family: 'Amiri', serif; }
+        .font-english { font-family: 'Open Sans', sans-serif; }
+        .dark {
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --border-color: #4a5568;
+        }
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --border-color: #e2e8f0;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        .bg-primary { background-color: var(--bg-primary); }
+        .bg-secondary { background-color: var(--bg-secondary); }
+        .text-primary { color: var(--text-primary); }
+        .text-secondary { color: var(--text-secondary); }
+        .border-color { border-color: var(--border-color); }
+    </style>
+</head>
+<body class="bg-primary text-primary transition-colors duration-300">
+
+    <header class="bg-secondary shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-green-800 font-english">Islamic Portal</h1>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-primary hover:text-green-700 font-semibold">Home</a>
+                <a href="#fatwa" class="text-primary hover:text-green-700 font-semibold">Fatwa</a>
+                <a href="#library" class="text-primary hover:text-green-700 font-semibold">Library</a>
+                <a href="#media" class="text-primary hover:text-green-700 font-semibold">Media</a>
+                <a href="#blog" class="text-primary hover:text-green-700 font-semibold">Blog</a>
+                <a href="#prayer" class="text-primary hover:text-green-700 font-semibold">Prayer Times</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <select id="lang-toggle" class="appearance-none bg-primary border border-color rounded-md py-1 px-3 text-primary">
+                        <option value="en">English</option>
+                        <option value="ur">اردو</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+                <button id="night-mode-toggle" class="p-2 rounded-full bg-primary border border-color">
+                    <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+            </div>
+             <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-primary">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#home" class="block py-2 text-primary hover:text-green-700 font-semibold">Home</a>
+            <a href="#fatwa" class="block py-2 text-primary hover:text-green-700 font-semibold">Fatwa</a>
+            <a href="#library" class="block py-2 text-primary hover:text-green-700 font-semibold">Library</a>
+            <a href="#media" class="block py-2 text-primary hover:text-green-700 font-semibold">Media</a>
+            <a href="#blog" class="block py-2 text-primary hover:text-green-700 font-semibold">Blog</a>
+            <a href="#prayer" class="block py-2 text-primary hover:text-green-700 font-semibold">Prayer Times</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section id="home" class="text-center mb-16">
+            <div class="bg-green-100 dark:bg-green-900 border-r-4 border-green-500 p-6 rounded-lg shadow-lg">
+                <p class="text-xl italic font-arabic text-green-800 dark:text-green-200" lang="ar">
+                    "إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ"
+                </p>
+                <p class="text-md mt-2 text-green-700 dark:text-green-300 font-english" lang="en">
+                    "Indeed, this Qur'an guides to that which is most suitable." (Surah Al-Isra, 17:9)
+                </p>
+                 <p class="text-lg mt-2 font-urdu text-green-700 dark:text-green-300" lang="ur" dir="rtl">
+                    "بے شک یہ قرآن وہ راستہ دکھاتا ہے جو سب سے سیدھا ہے۔"
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-secondary p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold font-urdu mb-2 text-green-800 dark:text-green-300">عقائد</h3>
+                    <p class="text-secondary font-english">Beliefs and Doctrines</p>
+                </div>
+                <div class="bg-secondary p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold font-urdu mb-2 text-green-800 dark:text-green-300">عبادات</h3>
+                    <p class="text-secondary font-english">Acts of Worship</p>
+                </div>
+                <div class="bg-secondary p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold font-urdu mb-2 text-green-800 dark:text-green-300">اخلاق</h3>
+                    <p class="text-secondary font-english">Morals and Ethics</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fatwa" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 font-urdu text-green-800 dark:text-green-300">فتویٰ سیکشن</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-1 bg-secondary p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 font-urdu text-primary">سوال पूछें</h3>
+                    <form id="fatwa-form">
+                        <div class="mb-4">
+                            <label for="question" class="block mb-2 font-semibold font-urdu text-secondary">آپ کا سوال</label>
+                            <textarea id="question" rows="4" class="w-full p-2 bg-primary border border-color rounded-md" placeholder="اپنا سوال یہاں لکھیں۔.."></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="fatwa-category" class="block mb-2 font-semibold font-urdu text-secondary">زمرہ منتخب کریں</label>
+                            <select id="fatwa-category" class="w-full p-2 bg-primary border border-color rounded-md">
+                                <option>Aqaid (عقائد)</option>
+                                <option>Ibadat (عبادات)</option>
+                                <option>Akhlaq (اخلاق)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-green-700 text-white font-bold py-2 px-4 rounded-md hover:bg-green-800">جمع کرائیں</button>
+                    </form>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="mb-4 flex space-x-4">
+                        <input type="text" id="fatwa-search" class="w-full p-2 bg-primary border border-color rounded-md" placeholder="فتویٰ تلاش کریں۔...">
+                    </div>
+                    <div id="fatwa-list" class="space-y-4">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="library" class="mb-16">
+             <h2 class="text-3xl font-bold text-center mb-8 font-urdu text-green-800 dark:text-green-300">اسلامی لائبریری</h2>
+             <div class="mb-4 flex justify-center">
+                 <select id="book-filter" class="p-2 bg-primary border border-color rounded-md">
+                     <option value="all">All Categories</option>
+                     <option value="Fiqh">Fiqh</option>
+                     <option value="Tafsir">Tafsir</option>
+                     <option value="Hadith">Hadith</option>
+                 </select>
+             </div>
+             <div id="book-grid" class="grid md:grid-cols-4 gap-8">
+                 </div>
+        </section>
+        
+        <section id="media" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 font-urdu text-green-800 dark:text-green-300">ویڈیو اور آڈیو</h2>
+            <div class="mb-4 flex justify-center">
+                 <input type="text" id="media-search" class="w-1/2 p-2 bg-primary border border-color rounded-md" placeholder="ویڈیو تلاش کریں...">
+             </div>
+            <div id="media-grid" class="grid md:grid-cols-3 gap-8">
+                </div>
+        </section>
+
+        <section id="blog" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 font-urdu text-green-800 dark:text-green-300">بلاگ / مضامین</h2>
+            <div id="blog-posts" class="space-y-8">
+                </div>
+        </section>
+
+        <section id="prayer" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 font-urdu text-green-800 dark:text-green-300">نماز کے اوقات</h2>
+            <div id="prayer-times" class="bg-secondary p-6 rounded-lg shadow-md text-center">
+                 </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-secondary py-8">
+        <div class="container mx-auto px-6 text-center text-secondary">
+            <div class="mb-4">
+                <a href="#" class="hover:text-green-700 mx-2">About Us</a>
+                <a href="#" class="hover:text-green-700 mx-2">Contact</a>
+                <a href="#" class="hover:text-green-700 mx-2">Donations</a>
+            </div>
+            <div class="flex justify-center space-x-4 mb-4">
+                </div>
+            <p>&copy; 2025 Islamic Knowledge & Fatwa Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="pdf-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-4 rounded-lg shadow-lg w-11/12 h-5/6">
+            <button id="close-pdf-modal" class="absolute top-2 right-2 text-black">X</button>
+            <div id="pdf-viewer" class="w-full h-full"></div>
+        </div>
+    </div>
+    
+    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-4 rounded-lg shadow-lg w-11/12 md:w-1/2">
+            <button id="close-video-modal" class="float-right font-bold">X</button>
+            <div id="video-player" class="aspect-w-16 aspect-h-9"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/yourphonenumber" target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.902-.533-5.587-1.474l-6.353 1.686zM8.981 6.312c.282-.473.473-.503.687-.51.211-.006.473.006.633.342.14.296.533 1.294.593 1.398.06.104.1.21.04.358-.059.149-.119.22-.239.339-.119.119-.239.179-.358.239-.119.06-.28.119-.398.06-.119-.06-.533-.239-.99-.69-.502-.489-.838-1.079-.898-1.258-.06-.179.06-.28.16-.38.099-.099.21-.119.299-.149z"/></svg>
+    </a>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mock Data
+            const fatwas = [
+                { id: 1, question: 'Is cryptocurrency trading permissible in Islam?', answer: 'The permissibility of cryptocurrency trading is a matter of scholarly debate...', category: 'Ibadat', scholar: 'Dr. John Doe', date: '2025-06-10' },
+                { id: 2, question: 'What is the ruling on insurance?', answer: 'Conventional insurance is generally considered impermissible due to elements of gharar (uncertainty) and riba (interest). Takaful (Islamic insurance) is a permissible alternative.', category: 'Aqaid', scholar: 'Sheikh Jane Smith', date: '2025-06-08' }
+            ];
+
+            const books = [
+                { id: 1, title: 'Riyad as-Salihin', author: 'Imam an-Nawawi', category: 'Hadith', file: 'https://islamicbulletin.org/en/ebooks/riyad_as_salihin_en.pdf' },
+                { id: 2, title: 'Tafsir Ibn Kathir', author: 'Ibn Kathir', category: 'Tafsir', file: 'https://www.islamicstudies.info/quran/ibn_kathir/ibn-kathir-surah-fatiha.pdf' },
+                { id: 3, title: 'Fiqh us-Sunnah', author: 'Sayyid Sabiq', category: 'Fiqh', file: 'http://www.muslim-library.com/dl/books/en_Fiqh_us_Sunnah.pdf' }
+            ];
+
+            const media = [
+                { id: 1, title: 'The Seerah of Prophet Muhammad (PBUH)', scholar: 'Yasir Qadhi', type: 'video', url: 'https://www.youtube.com/embed/VO5p_m3gD9k' },
+                 { id: 2, title: 'Lessons from Surah Al-Kahf', scholar: 'Nouman Ali Khan', type: 'video', url: 'https://www.youtube.com/embed/d3P-t_A3f5w' }
+            ];
+
+            const blogPosts = [
+                {id: 1, title: "The Importance of Salah", author: "Admin", date: "2025-06-01", content: "Salah (prayer) is the second pillar of Islam and a direct connection between a worshipper and Allah..."},
+                {id: 2, title: "Understanding Zakat", author: "Admin", date: "2025-05-25", content: "Zakat, the third pillar of Islam, is an obligatory charity for eligible Muslims..."}
+            ];
+
+            const prayerTimes = {
+                "Fajr": "04:15 AM",
+                "Dhuhr": "01:00 PM",
+                "Asr": "05:30 PM",
+                "Maghrib": "07:15 PM",
+                "Isha": "08:45 PM"
+            };
+
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Night Mode
+            const nightModeToggle = document.getElementById('night-mode-toggle');
+            nightModeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+            
+            // Language Toggle
+            const langToggle = document.getElementById('lang-toggle');
+            langToggle.addEventListener('change', (e) => {
+                document.documentElement.lang = e.target.value;
+                document.documentElement.dir = e.target.value === 'ur' || e.target.value === 'ar' ? 'rtl' : 'ltr';
+            });
+
+            // Fatwa Section
+            const fatwaList = document.getElementById('fatwa-list');
+            const fatwaSearch = document.getElementById('fatwa-search');
+            
+            function renderFatwas(filteredFatwas) {
+                fatwaList.innerHTML = '';
+                filteredFatwas.forEach(fatwa => {
+                    const div = document.createElement('div');
+                    div.className = 'p-4 bg-secondary rounded-lg shadow-md';
+                    div.innerHTML = `<h4 class="font-bold text-lg font-urdu text-primary">${fatwa.question}</h4><p class="text-secondary mt-2">${fatwa.answer}</p><div class="text-sm mt-2 text-gray-500">By ${fatwa.scholar} on ${fatwa.date}</div>`;
+                    fatwaList.appendChild(div);
+                });
+            }
+
+            fatwaSearch.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filtered = fatwas.filter(f => f.question.toLowerCase().includes(searchTerm) || f.answer.toLowerCase().includes(searchTerm));
+                renderFatwas(filtered);
+            });
+
+            renderFatwas(fatwas);
+            
+             // Book Library
+            const bookGrid = document.getElementById('book-grid');
+            const bookFilter = document.getElementById('book-filter');
+
+            function renderBooks(filteredBooks) {
+                bookGrid.innerHTML = '';
+                filteredBooks.forEach(book => {
+                    const div = document.createElement('div');
+                    div.className = 'bg-secondary p-4 rounded-lg shadow-md text-center';
+                    div.innerHTML = `<h4 class="font-bold text-lg text-primary">${book.title}</h4><p class="text-secondary">${book.author}</p><button data-file="${book.file}" class="mt-4 bg-green-700 text-white font-bold py-2 px-4 rounded-md view-pdf">Read</button>`;
+                    bookGrid.appendChild(div);
+                });
+            }
+
+            bookFilter.addEventListener('change', (e) => {
+                const category = e.target.value;
+                if (category === 'all') {
+                    renderBooks(books);
+                } else {
+                    const filtered = books.filter(b => b.category === category);
+                    renderBooks(filtered);
+                }
+            });
+            
+            renderBooks(books);
+
+            // Media Section
+            const mediaGrid = document.getElementById('media-grid');
+            const mediaSearch = document.getElementById('media-search');
+
+            function renderMedia(filteredMedia) {
+                mediaGrid.innerHTML = '';
+                filteredMedia.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'bg-secondary p-4 rounded-lg shadow-md text-center';
+                    div.innerHTML = `<h4 class="font-bold text-lg text-primary">${item.title}</h4><p class="text-secondary">${item.scholar}</p><button data-url="${item.url}" class="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-md view-video">Watch</button>`;
+                    mediaGrid.appendChild(div);
+                });
+            }
+
+             mediaSearch.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filtered = media.filter(m => m.title.toLowerCase().includes(searchTerm) || m.scholar.toLowerCase().includes(searchTerm));
+                renderMedia(filtered);
+            });
+            
+            renderMedia(media);
+
+             // Blog Section
+            const blogPostsContainer = document.getElementById('blog-posts');
+            function renderBlogPosts(){
+                blogPosts.forEach(post => {
+                    const article = document.createElement('article');
+                    article.className = 'bg-secondary p-6 rounded-lg shadow-md';
+                    article.innerHTML = `<h3 class="text-2xl font-bold font-english text-primary">${post.title}</h3><p class="text-sm text-secondary mb-4">By ${post.author} on ${post.date}</p><p>${post.content}</p>`;
+                    blogPostsContainer.appendChild(article);
+                });
+            }
+            renderBlogPosts();
+
+             // Prayer Times
+            const prayerTimesContainer = document.getElementById('prayer-times');
+            function renderPrayerTimes() {
+                let html = '<div class="grid grid-cols-5 gap-4">';
+                for(const prayer in prayerTimes) {
+                    html += `<div class="p-2"><h4 class="font-bold text-primary">${prayer}</h4><p class="text-secondary">${prayerTimes[prayer]}</p></div>`;
+                }
+                html += '</div>';
+                prayerTimesContainer.innerHTML = html;
+            }
+            renderPrayerTimes();
+
+            // Modals
+            const pdfModal = document.getElementById('pdf-modal');
+            const videoModal = document.getElementById('video-modal');
+
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('view-pdf')) {
+                    const file = e.target.dataset.file;
+                    // For a real implementation, you would use PDF.js to render the PDF here.
+                    // This is a simplified version that opens the PDF in a new tab.
+                     window.open(file, '_blank');
+                }
+
+                 if (e.target.classList.contains('view-video')) {
+                    const url = e.target.dataset.url;
+                    document.getElementById('video-player').innerHTML = `<iframe class="w-full h-full" src="${url}" frameborder="0" allowfullscreen></iframe>`;
+                    videoModal.style.display = 'flex';
+                }
+
+                if(e.target.id === 'close-video-modal') {
+                    videoModal.style.display = 'none';
+                    document.getElementById('video-player').innerHTML = '';
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
