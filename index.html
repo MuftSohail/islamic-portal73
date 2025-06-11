@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اسلامی علم اور فتویٰ پورٹل</title>
+    <title>اسلامی علم اور فتویٰ پورٹل - نیا دلکش ڈیزائن</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lalezar&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -21,32 +21,30 @@
             font-display: swap;
         }
 
-        /* Base Styles & Theming */
+        /* --- 🎨 New Royal & Gold Theme 🎨 --- */
         :root {
-            --bg-primary: #f8f7f4;
+            --bg-primary: #f4f1ea; /* Soft Cream */
             --bg-secondary: #ffffff;
-            --bg-accent: #eef3f1;
-            --text-primary: #333333;
-            --text-secondary: #555555;
-            --brand-primary: #047857; /* Richer Green */
-            --brand-secondary: #b48c5a; /* Gold Accent */
-            --border-color: #e5e7eb;
+            --text-primary: #1e293b; /* Dark Slate */
+            --text-secondary: #475569;
+            --brand-primary: #0B2447; /* Deep Navy */
+            --brand-secondary: #A07628; /* Muted Gold */
+            --brand-glow: rgba(160, 118, 40, 0.4);
         }
 
         .dark {
-            --bg-primary: #121212;
-            --bg-secondary: #1e1e1e;
-            --bg-accent: #2a2a2a;
-            --text-primary: #e0e0e0;
-            --text-secondary: #a0a0a0;
-            --brand-primary: #10b981; /* Brighter Green for dark mode */
-            --brand-secondary: #d4af37; /* Brighter Gold */
-            --border-color: #374151;
+            --bg-primary: #0B2447; /* Deep Navy */
+            --bg-secondary: #19376D; /* Lighter Navy */
+            --text-primary: #E0E7FF; /* Soft Lavender */
+            --text-secondary: #94A3B8; /* Slate Gray */
+            --brand-primary: #F4EAD2; /* Light Parchment */
+            --brand-secondary: #FFC107; /* Bright Gold */
+            --brand-glow: rgba(255, 193, 7, 0.5);
         }
         
-        /* Apply smooth transitions */
+        /* Smooth transitions for all elements */
         * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         body {
@@ -57,277 +55,206 @@
 
         .font-urdu { font-family: 'Jameel Noori Nastaleeq', serif; }
         .font-arabic { font-family: 'Amiri', serif; }
+        .font-display { font-family: 'Lalezar', cursive; } /* For headings */
 
+        /* Theme Color Classes */
         .bg-primary { background-color: var(--bg-primary); }
         .bg-secondary { background-color: var(--bg-secondary); }
-        .bg-accent { background-color: var(--bg-accent); }
         .text-primary { color: var(--text-primary); }
         .text-secondary { color: var(--text-secondary); }
-        .border-color { border-color: var(--border-color); }
         .brand-text { color: var(--brand-primary); }
         .brand-bg { background-color: var(--brand-primary); }
         .brand-secondary-text { color: var(--brand-secondary); }
-        .brand-secondary-bg { background-color: var(--brand-secondary); }
         
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* --- ✨ New Animations & Effects ✨ --- */
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-primary);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid var(--brand-secondary);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
-        .fade-in-section {
-            animation: fadeIn 0.8s ease-out forwards;
+        /* Staggered Fade-in Animation */
+        .fade-in-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        
-        /* Card hover effect */
+        .fade-in-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Hover Glow Effect */
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px var(--brand-glow);
         }
-        .dark .card-hover:hover {
-             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        
+        /* Decorative Divider */
+        .divider {
+            height: 2px;
+            width: 150px;
+            background: linear-gradient(to left, transparent, var(--brand-secondary), transparent);
+            margin: 1rem auto;
         }
     </style>
 </head>
 <body class="bg-primary text-primary">
 
-    <header class="bg-secondary/80 dark:bg-secondary/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="bg-secondary/70 backdrop-blur-lg shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold brand-text font-english flex items-center gap-2"><i class="fas fa-moon brand-secondary-text"></i> اسلامی پورٹل</h1>
-            <div class="hidden md:flex items-center space-x-6" id="nav-links">
-                <a href="#home" class="text-primary hover:brand-text font-semibold">گھر</a>
-                <a href="#fatwa" class="text-primary hover:brand-text font-semibold">فتویٰ</a>
-                <a href="#library" class="text-primary hover:brand-text font-semibold">لائبریری</a>
-                <a href="#media" class="text-primary hover:brand-text font-semibold">میڈیا</a>
-                <a href="#blog" class="text-primary hover:brand-text font-semibold">بلاگ</a>
-                <a href="#prayer" class="text-primary hover:brand-text font-semibold">نماز کے اوقات</a>
+            <h1 class="font-display text-3xl brand-text">پورٹل نور</h1>
+            <div class="hidden md:flex items-center space-x-6 font-semibold" id="nav-links">
+                <a href="#home" class="text-primary hover:brand-secondary-text">گھر</a>
+                <a href="#fatwa" class="text-primary hover:brand-secondary-text">فتویٰ</a>
+                <a href="#library" class="text-primary hover:brand-secondary-text">لائبریری</a>
             </div>
             <div class="flex items-center space-x-4">
-                 <div class="relative">
-                    <select id="lang-toggle" class="appearance-none bg-primary border border-color rounded-md py-1 px-3 text-primary">
-                        <option value="ur">اردو</option>
-                        <option value="en">English</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                </div>
-                <button id="night-mode-toggle" class="p-2 rounded-full bg-primary border border-color text-yellow-500 dark:text-yellow-300">
-                    <i class="fas fa-sun"></i>
-                </button>
-            </div>
-             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-primary">
-                    <i class="fas fa-bars text-xl"></i>
+                <button id="night-mode-toggle" class="text-xl text-primary hover:brand-secondary-text">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
-             </div>
     </header>
 
     <main class="container mx-auto px-6 py-8">
 
-        <section id="home" class="text-center mb-20 fade-in-section">
-            <div class="bg-gradient-to-r from-green-100 to-yellow-50 dark:from-green-900/50 dark:to-yellow-900/50 border-r-4 border-brand-secondary p-8 rounded-xl shadow-lg">
-                <p class="text-3xl font-arabic brand-text" lang="ar">
-                    "إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ"
-                </p>
-                <p class="text-lg mt-4 font-urdu" lang="ur">
-                    "بے شک یہ قرآن وہ راستہ دکھاتا ہے جو سب سے سیدھا ہے۔"
-                </p>
-                 <p class="text-md mt-2 text-secondary font-english" lang="en">
-                    "Indeed, this Qur'an guides to that which is most suitable." (17:9)
-                </p>
+        <section id="home" class="text-center my-16">
+            <div class="p-8 rounded-xl">
+                <p class="font-display text-5xl md:text-6xl brand-text drop-shadow-sm">علم کی روشنی</p>
+                <p class="font-arabic text-3xl brand-secondary-text mt-4">"وَقُل رَّبِّ زِدْنِي عِلْمًا"</p>
+                <p class="font-urdu text-xl text-secondary mt-2">"اور کہو 'اے میرے رب، میرے علم میں اضافہ فرما۔'" (طہ: 114)</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-secondary p-6 rounded-lg shadow-md card-hover">
-                    <h3 class="text-3xl font-urdu mb-2 brand-secondary-text">عقائد</h3>
-                    <p class="text-secondary font-english">Beliefs and Doctrines</p>
-                </div>
-                <div class="bg-secondary p-6 rounded-lg shadow-md card-hover">
-                    <h3 class="text-3xl font-urdu mb-2 brand-secondary-text">عبادات</h3>
-                    <p class="text-secondary font-english">Acts of Worship</p>
-                </div>
-                <div class="bg-secondary p-6 rounded-lg shadow-md card-hover">
-                    <h3 class="text-3xl font-urdu mb-2 brand-secondary-text">اخلاق</h3>
-                    <p class="text-secondary font-english">Morals and Ethics</p>
-                </div>
-            </div>
+            <div class="divider"></div>
         </section>
 
-        <section id="fatwa" class="mb-20 fade-in-section">
-            <h2 class="text-4xl font-bold text-center mb-10 font-urdu brand-text flex items-center justify-center gap-3"><i class="fas fa-question-circle"></i>فتویٰ سیکشن</h2>
+        <section id="fatwa" class="mb-20">
+            <h2 class="font-display text-4xl text-center mb-10 brand-text">سوال و جواب</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="md:col-span-1 bg-secondary p-6 rounded-lg shadow-lg">
+                <div class="md:col-span-1 bg-secondary p-6 rounded-lg shadow-xl card-hover">
                     <h3 class="text-2xl font-bold mb-4 font-urdu text-primary">سوال پوچھیں</h3>
                     <form id="fatwa-form">
                         <div class="mb-4">
-                            <label for="question" class="block mb-2 font-semibold font-urdu text-secondary">آپ کا سوال</label>
-                            <textarea id="question" rows="4" class="w-full p-3 bg-accent border-color rounded-md focus:ring-2 focus:ring-brand-primary outline-none" placeholder="اپنا سوال یہاں لکھیں۔.."></textarea>
+                            <textarea id="question" rows="4" class="w-full p-3 bg-primary border-2 border-transparent focus:border-brand-secondary rounded-md outline-none" placeholder="اپنا سوال یہاں لکھیں۔.."></textarea>
                         </div>
-                        <div class="mb-4">
-                            <label for="fatwa-category" class="block mb-2 font-semibold font-urdu text-secondary">زمرہ منتخب کریں</label>
-                            <select id="fatwa-category" class="w-full p-3 bg-accent border-color rounded-md focus:ring-2 focus:ring-brand-primary outline-none">
-                                <option>عقائد</option>
-                                <option>عبادات</option>
-                                <option>اخلاق</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full brand-bg text-white font-bold py-3 px-4 rounded-md hover:bg-opacity-90 transform hover:scale-105 transition-transform">جمع کرائیں</button>
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-primary to-blue-900 dark:from-yellow-400 dark:to-amber-500 text-white dark:text-gray-900 font-bold py-3 px-4 rounded-md transform hover:scale-105 transition-transform">جمع کرائیں</button>
                     </form>
                 </div>
-                <div class="md:col-span-2">
-                    <div class="mb-4">
-                        <input type="text" id="fatwa-search" class="w-full p-3 bg-accent border-color rounded-md focus:ring-2 focus:ring-brand-primary outline-none" placeholder="فتویٰ تلاش کریں...">
+                 <div class="md:col-span-2 space-y-4" id="fatwa-list">
                     </div>
-                    <div id="fatwa-list" class="space-y-4">
-                        </div>
-                </div>
             </div>
+            <div class="divider mt-20"></div>
         </section>
 
-        <section id="library" class="mb-20 fade-in-section">
-             <h2 class="text-4xl font-bold text-center mb-10 font-urdu brand-text flex items-center justify-center gap-3"><i class="fas fa-book-open"></i>اسلامی لائبریری</h2>
-             <div class="mb-6 flex justify-center">
-                 <select id="book-filter" class="p-3 bg-secondary border border-color rounded-md focus:ring-2 focus:ring-brand-primary outline-none">
-                     <option value="all">تمام زمرے</option>
-                     <option value="Fiqh">فقہ</option>
-                     <option value="Tafsir">تفسیر</option>
-                     <option value="Hadith">حدیث</option>
-                 </select>
-             </div>
-             <div id="book-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <section id="library" class="mb-20">
+             <h2 class="font-display text-4xl text-center mb-10 brand-text">علمی خزانہ</h2>
+             <div id="book-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                  </div>
         </section>
 
-        </main>
+    </main>
 
-    <footer class="bg-accent py-10">
+    <footer class="bg-secondary py-10">
         <div class="container mx-auto px-6 text-center text-secondary">
-            <div class="mb-4">
-                <a href="#" class="hover:brand-text mx-3">ہمارے بارے میں</a>
-                <a href="#" class="hover:brand-text mx-3">رابطہ کریں</a>
-                <a href="#" class="hover:brand-text mx-3">عطیات</a>
-            </div>
-            <div class="flex justify-center space-x-6 my-6">
-                <a href="#" class="text-2xl hover:brand-secondary-text"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-2xl hover:brand-secondary-text"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-2xl hover:brand-secondary-text"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p>© 2025 اسلامی علم اور فتویٰ پورٹل۔ جملہ حقوق محفوظ ہیں۔</p>
+            <p class="font-display text-2xl brand-text">پورٹل نور</p>
+            <p class="mt-2">© 2025 ۔ جملہ حقوق محفوظ ہیں۔</p>
         </div>
     </footer>
-
-    <a href="https://wa.me/yourphonenumber" target="_blank" class="fixed bottom-5 right-5 brand-bg text-white p-4 rounded-full shadow-lg transform hover:scale-110 transition-transform">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Mock Data
+            // --- ✨ Preloader Logic ✨ ---
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            });
+
+            // Mock Data (Urdu)
             const fatwas = [
-                { id: 1, question: 'کیا اسلام میں کریپٹو کرنسی ٹریڈنگ جائز ہے؟', answer: 'کریپٹو کرنسی ٹریڈنگ کا جواز علماء کے درمیان ایک متنازعہ مسئلہ ہے۔..', category: 'عبادات', scholar: 'ڈاکٹر جون ڈو', date: '2025-06-10' },
-                { id: 2, question: 'انشورنس پر کیا حکم ہے؟', answer: 'روایتی انشورنس عام طور پر غرار (غیر یقینی) اور ربا (سود) کے عناصر کی وجہ سے ناجائز سمجھی جاتی ہے۔ تکافل (اسلامی انشورنس) ایک جائز متبادل ہے۔', category: 'عقائد', scholar: 'شیخ جین سمتھ', date: '2025-06-08' }
+                { question: 'کیا اسلام میں کریپٹو کرنسی ٹریڈنگ جائز ہے؟', answer: 'کریپٹو کرنسی ٹریڈنگ کا جواز علماء کے درمیان ایک متنازعہ مسئلہ ہے۔ اس میں شامل جدید ٹیکنالوجی اور غیر یقینی کی وجہ سے مختلف آراء موجود ہیں۔' },
+                { question: 'انشورنس پر کیا حکم ہے؟', answer: 'روایتی انشورنس میں غرار (غیر یقینی) اور ربا (سود) کے عناصر کی وجہ سے اسے عام طور پر ناجائز سمجھا جاتا ہے۔ تکافل (اسلامی انشورنس) ایک جائز متبادل ہے۔' },
+                { question: 'کیا تصویر بنانا حرام ہے؟', answer: 'جانداروں کی تصویر سازی کے بارے میں علماء میں اختلاف پایا جاتا ہے۔ ڈیجیٹل تصاویر اور ضرورت کے تحت بنائی گئی تصاویر پر نرمی کی گنجائش موجود ہے۔' }
             ];
 
             const books = [
-                { id: 1, title: 'ریاض الصالحین', author: 'امام النووی', category: 'Hadith', file: 'https://islamicbulletin.org/en/ebooks/riyad_as_salihin_en.pdf' },
-                { id: 2, title: 'تفسیر ابن کثیر', author: 'ابن کثیر', category: 'Tafsir', file: 'https://www.islamicstudies.info/quran/ibn_kathir/ibn-kathir-surah-fatiha.pdf' },
-                { id: 3, title: 'فقہ السنہ', author: 'سید سابق', category: 'Fiqh', file: 'http://www.muslim-library.com/dl/books/en_Fiqh_us_Sunnah.pdf' },
-                { id: 4, title: 'صحیح بخاری', author: 'امام بخاری', category: 'Hadith', file: 'https://www.muslim-library.com/dl/books/en_Sahih_Al-Bukhari.pdf' },
+                { title: 'ریاض الصالحین', author: 'امام النووی', file: '#' },
+                { title: 'تفسیر ابن کثیر', author: 'ابن کثیر', file: '#' },
+                { title: 'فقہ السنہ', author: 'سید سابق', file: '#' },
+                { title: 'صحیح بخاری', author: 'امام بخاری', file: '#' },
             ];
 
-            // Mobile Menu
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.getElementById('nav-links').cloneNode(true);
-            mobileMenu.appendChild(navLinks);
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Night Mode Toggle
+            // Night Mode
             const nightModeToggle = document.getElementById('night-mode-toggle');
             const nightModeIcon = nightModeToggle.querySelector('i');
             nightModeToggle.addEventListener('click', () => {
                 const isDark = document.documentElement.classList.toggle('dark');
-                nightModeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+                nightModeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
             });
             
-            // Language Toggle
-            const langToggle = document.getElementById('lang-toggle');
-            langToggle.addEventListener('change', (e) => {
-                const lang = e.target.value;
-                document.documentElement.lang = lang;
-                document.documentElement.dir = (lang === 'ur' || lang === 'ar') ? 'rtl' : 'ltr';
-                // Here you would typically reload content in the selected language
-            });
-
-            // Fatwa Section
+            // Render Fatwas
             const fatwaList = document.getElementById('fatwa-list');
-            const fatwaSearch = document.getElementById('fatwa-search');
-            
-            function renderFatwas(filteredFatwas) {
-                fatwaList.innerHTML = '';
-                filteredFatwas.forEach(fatwa => {
-                    const div = document.createElement('div');
-                    div.className = 'p-5 bg-secondary rounded-lg shadow-md card-hover';
-                    div.innerHTML = `<h4 class="font-bold text-xl font-urdu brand-text">${fatwa.question}</h4><p class="text-secondary mt-2">${fatwa.answer}</p><div class="text-sm mt-3 text-gray-500"><b>${fatwa.scholar}</b> - ${fatwa.date}</div>`;
-                    fatwaList.appendChild(div);
-                });
-            }
-
-            fatwaSearch.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const filtered = fatwas.filter(f => f.question.toLowerCase().includes(searchTerm) || f.answer.toLowerCase().includes(searchTerm));
-                renderFatwas(filtered);
+            fatwas.forEach(fatwa => {
+                const div = document.createElement('div');
+                div.className = 'bg-secondary p-5 rounded-lg shadow-lg card-hover fade-in-item';
+                div.innerHTML = `<h4 class="font-bold text-xl font-urdu brand-secondary-text">${fatwa.question}</h4><p class="text-secondary mt-2">${fatwa.answer}</p>`;
+                fatwaList.appendChild(div);
             });
-            renderFatwas(fatwas);
-            
-             // Book Library
+
+            // Render Books
             const bookGrid = document.getElementById('book-grid');
-            const bookFilter = document.getElementById('book-filter');
-
-            function renderBooks(filteredBooks) {
-                bookGrid.innerHTML = '';
-                filteredBooks.forEach(book => {
-                    const div = document.createElement('div');
-                    div.className = 'bg-secondary p-4 rounded-lg shadow-md text-center flex flex-col justify-between card-hover';
-                    div.innerHTML = `<div><h4 class="font-bold text-xl font-urdu brand-secondary-text">${book.title}</h4><p class="text-secondary">${book.author}</p></div><button data-file="${book.file}" class="mt-4 brand-bg text-white font-bold py-2 px-4 rounded-md view-pdf hover:bg-opacity-90 transform hover:scale-105 transition-transform">پڑھیں</button>`;
-                    bookGrid.appendChild(div);
-                });
-            }
-
-            bookFilter.addEventListener('change', (e) => {
-                const category = e.target.value;
-                const filtered = (category === 'all') ? books : books.filter(b => b.category === category);
-                renderBooks(filtered);
+            books.forEach(book => {
+                const div = document.createElement('div');
+                div.className = 'bg-secondary p-6 rounded-lg shadow-lg text-center flex flex-col justify-between items-center card-hover fade-in-item';
+                div.innerHTML = `<div class="mb-4"><h4 class="font-bold text-2xl font-urdu brand-secondary-text">${book.title}</h4><p class="text-secondary">${book.author}</p></div><a href="${book.file}" target="_blank" class="bg-gradient-to-r from-brand-primary to-blue-900 dark:from-yellow-400 dark:to-amber-500 text-white dark:text-gray-900 font-bold py-2 px-6 rounded-md transform hover:scale-105 transition-transform">پڑھیں</a>`;
+                bookGrid.appendChild(div);
             });
-            renderBooks(books);
-
-             // Animate on scroll
+            
+            // --- ✨ Staggered Animation Logic ✨ ---
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-section');
+                        // Add 'visible' class to trigger animation
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('section').forEach(section => {
-                section.style.opacity = '0'; // Hide sections initially
-                observer.observe(section);
+            }, {
+                threshold: 0.1 // Trigger when 10% of the item is visible
             });
 
-             // PDF Viewer (simplified: opens in new tab)
-            document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('view-pdf')) {
-                    const file = e.target.dataset.file;
-                    window.open(file, '_blank');
-                }
+            // Observe all items that need to be animated
+            document.querySelectorAll('.fade-in-item').forEach((item, index) => {
+                // Add a delay based on the item's index
+                item.style.transitionDelay = `${index * 100}ms`;
+                observer.observe(item);
             });
         });
     </script>
